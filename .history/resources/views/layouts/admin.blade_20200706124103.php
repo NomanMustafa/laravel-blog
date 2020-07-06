@@ -40,12 +40,61 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
      
             @include('includes.admin.headerNavigation')
             @include('includes.admin.sideBar')
-    <div id="page-wrapper">
-        <div class="graphs">           
+               
 @yield('content')
-</div>
-</div>
 
+<script>
+
+var seriesData = [ [], [], [], [], [] ];
+var random = new Rickshaw.Fixtures.RandomData(50);
+
+for (var i = 0; i < 75; i++) {
+	random.addData(seriesData);
+}
+
+var graph = new Rickshaw.Graph( {
+	element: document.getElementById("chart"),
+	renderer: 'multi',
+	
+	dotSize: 5,
+	series: [
+		{
+			name: 'temperature',
+			data: seriesData.shift(),
+			color: '#AFE9FF',
+			renderer: 'stack'
+		}, {
+			name: 'heat index',
+			data: seriesData.shift(),
+			color: '#FFCAC0',
+			renderer: 'stack'
+		}, {
+			name: 'dewpoint',
+			data: seriesData.shift(),
+			color: '#555',
+			renderer: 'scatterplot'
+		}, {
+			name: 'pop',
+			data: seriesData.shift().map(function(d) { return { x: d.x, y: d.y / 4 } }),
+			color: '#555',
+			renderer: 'bar'
+		}, {
+			name: 'humidity',
+			data: seriesData.shift().map(function(d) { return { x: d.x, y: d.y * 1.5 } }),
+			renderer: 'line',
+			color: '#ef553a'
+		}
+	]
+} );
+
+
+graph.render();
+
+var detail = new Rickshaw.Graph.HoverDetail({
+	graph: graph
+});
+</script>
+</div>
 	      <!-- map -->
 <link href="{{ asset('admin/assets/css/jqvmap.css') }}" rel='stylesheet' type='text/css' />
 <script src="{{ asset('admin/assets/js/jquery.vmap.js') }}"></script>

@@ -10,7 +10,6 @@
 
                 <!-- /.nav-second-level -->
             </li>
-            @if(Auth::user()->author==true)
             <li> <a>Author</a> </li>
             <li>
                 <a href="{{ route('authorDashboard') }}"><i class="fa fa-dashboard fa-fw nav_icon {{ Route::currentRouteName()== 'authorDashboard' ? 'active': ''}}"></i>Dashboard</a>
@@ -25,8 +24,6 @@
 
                 <!-- /.nav-second-level -->
             </li>
-            @endif
-            @if(Auth::user()->admin==true)
             <li><a>Admin</a></li>
             <li>
                 <a href="{{ route('adminDashboard') }}"><i class="fa fa-dashboard fa-fw nav_icon {{ Route::currentRouteName()== 'adminDashboard' ? 'active': ''}}"></i>Dashboard</a>
@@ -47,7 +44,7 @@
                 <!-- /.nav-second-level -->
             </li>
 
-            @endif
+
 
         </ul>
     </div>

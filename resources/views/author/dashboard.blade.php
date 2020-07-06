@@ -1,1 +1,5 @@
-author dashboard
+@extends('layouts.admin')
+
+@section('content')
+
+@endsection

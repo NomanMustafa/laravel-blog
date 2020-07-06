@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>@yield('title', 'Laravel Blog Dashboard')</title>
+<title>Modern an Admin Panel Category Flat Bootstarp Resposive Website Template | Home :: w3layouts</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Modern Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
@@ -40,12 +40,61 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
      
             @include('includes.admin.headerNavigation')
             @include('includes.admin.sideBar')
-    <div id="page-wrapper">
-        <div class="graphs">           
+               
 @yield('content')
-</div>
-</div>
 
+<script>
+
+var seriesData = [ [], [], [], [], [] ];
+var random = new Rickshaw.Fixtures.RandomData(50);
+
+for (var i = 0; i < 75; i++) {
+	random.addData(seriesData);
+}
+
+var graph = new Rickshaw.Graph( {
+	element: document.getElementById("chart"),
+	renderer: 'multi',
+	
+	dotSize: 5,
+	series: [
+		{
+			name: 'temperature',
+			data: seriesData.shift(),
+			color: '#AFE9FF',
+			renderer: 'stack'
+		}, {
+			name: 'heat index',
+			data: seriesData.shift(),
+			color: '#FFCAC0',
+			renderer: 'stack'
+		}, {
+			name: 'dewpoint',
+			data: seriesData.shift(),
+			color: '#555',
+			renderer: 'scatterplot'
+		}, {
+			name: 'pop',
+			data: seriesData.shift().map(function(d) { return { x: d.x, y: d.y / 4 } }),
+			color: '#555',
+			renderer: 'bar'
+		}, {
+			name: 'humidity',
+			data: seriesData.shift().map(function(d) { return { x: d.x, y: d.y * 1.5 } }),
+			renderer: 'line',
+			color: '#ef553a'
+		}
+	]
+} );
+
+
+graph.render();
+
+var detail = new Rickshaw.Graph.HoverDetail({
+	graph: graph
+});
+</script>
+</div>
 	      <!-- map -->
 <link href="{{ asset('admin/assets/css/jqvmap.css') }}" rel='stylesheet' type='text/css' />
 <script src="{{ asset('admin/assets/js/jquery.vmap.js') }}"></script>
@@ -80,7 +129,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	    </div>
 		
       <!-- /#page-wrapper -->
- </div> 
+ </div>
     <!-- /#wrapper -->
     <!-- Bootstrap Core JavaScript -->
     <script src="{{ asset('admin/assets/js/bootstrap.min.js') }}"></script>

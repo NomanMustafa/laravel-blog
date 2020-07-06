@@ -1,1 +1,5 @@
-admin.users
+@extends('layouts.admin')
+
+@section('content')
+
+@endsection

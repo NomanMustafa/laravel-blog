@@ -40,11 +40,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
      
             @include('includes.admin.headerNavigation')
             @include('includes.admin.sideBar')
-    <div id="page-wrapper">
-        <div class="graphs">           
+               
 @yield('content')
-</div>
-</div>
+
 
 	      <!-- map -->
 <link href="{{ asset('admin/assets/css/jqvmap.css') }}" rel='stylesheet' type='text/css' />

@@ -1,1 +1,5 @@
-author.comments
+@extends('layouts.admin')
+
+@section('content')
+
+@endsection
