@@ -8,7 +8,7 @@ use App\Comment;
 use Carbon\Carbon;
 use App\Http\Requests\CreatePost;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Support\Facades\Session;
 
 class AuthorController extends Controller
 {

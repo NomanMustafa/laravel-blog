@@ -9,7 +9,6 @@ use Carbon\Carbon;
 use App\Http\Requests\CreatePost;
 use Illuminate\Support\Facades\Auth;
 
-
 class AuthorController extends Controller
 {
 
@@ -31,12 +30,11 @@ class AuthorController extends Controller
     }
     public function createPost(CreatePost $request)
     {
-        
         $post = new Post();
         $post->title = $request['title'];
         $post->content = $request['content'];
         $post->user_id =Auth::id();
-      
+        dd($post);
         $post->save();
        
        

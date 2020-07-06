@@ -35,14 +35,6 @@ class UserController extends Controller
             {
                 return redirect()->back()->with('error', 'Your currrent password are not with you provided');
             }
-            $validation = $request->validate([
-                'password' => 'required',
-                'new_pasword' => 'required|string|min:6|confirmed',
-            ]);
-            $user->password = bycrypt($request['new_pasword']);
-            $user->save();
-            return redirect()->back()->with('success',  "Password Chnage Successfully");
-
         }
         return back();
         

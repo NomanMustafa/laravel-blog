@@ -48,10 +48,10 @@
                                     <label class="control-label">New Password</label>
                                     <input type="password" name="password" class="form-control1 ng-invalid ng-invalid-required ng-touched" ng-model="model.password" required="">
                                 </div>
-                                {{-- <div class="form-group">
+                                <div class="form-group">
                                     <label class="control-label">Conform Password</label>
                                     <input type="password" name="new_conform_password" class="form-control1 ng-invalid ng-invalid-required ng-touched" ng-model="model.password" required="">
-                                </div> --}}
+                                </div>
 
 
 

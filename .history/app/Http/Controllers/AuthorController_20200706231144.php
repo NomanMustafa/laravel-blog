@@ -9,7 +9,6 @@ use Carbon\Carbon;
 use App\Http\Requests\CreatePost;
 use Illuminate\Support\Facades\Auth;
 
-
 class AuthorController extends Controller
 {
 
@@ -29,18 +28,18 @@ class AuthorController extends Controller
     {
         return view('author.newPost');
     }
-    public function createPost(CreatePost $request)
+    public function createPost()
     {
-        
-        $post = new Post();
-        $post->title = $request['title'];
-        $post->content = $request['content'];
-        $post->user_id =Auth::id();
-      
-        $post->save();
+        return "hi";
+    //     $post = new Post();
+    //     $post->title = $request['title'];
+    //     $post->content = $request['content'];
+    //     $post->user_id =Auth::id();
+    //     dd($post); die();
+    //     $post->save();
        
        
-       return back()->with('success', 'The Post is sucessfully Created'); 
+    //    return back()->with('success', 'The Post is sucessfully Created'); 
     }
     public function posts()
     {

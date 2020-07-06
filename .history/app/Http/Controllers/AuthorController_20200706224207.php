@@ -2,13 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use session;
 use App\Post;
 use App\Comment;
 use Carbon\Carbon;
-use App\Http\Requests\CreatePost;
 use Illuminate\Support\Facades\Auth;
-
 
 class AuthorController extends Controller
 {
@@ -29,18 +26,9 @@ class AuthorController extends Controller
     {
         return view('author.newPost');
     }
-    public function createPost(CreatePost $request)
+    public function createPost()
     {
-        
-        $post = new Post();
-        $post->title = $request['title'];
-        $post->content = $request['content'];
-        $post->user_id =Auth::id();
-      
-        $post->save();
-       
-       
-       return back()->with('success', 'The Post is sucessfully Created'); 
+       return 'HI'; 
     }
     public function posts()
     {

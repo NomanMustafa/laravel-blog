@@ -6,7 +6,6 @@ use App\Comment;
 use Illuminate\Http\Request;
 use App\Http\Requests\UpdateUser;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -35,14 +34,6 @@ class UserController extends Controller
             {
                 return redirect()->back()->with('error', 'Your currrent password are not with you provided');
             }
-            $validation = $request->validate([
-                'password' => 'required',
-                'new_pasword' => 'required|string|min:6|confirmed',
-            ]);
-            $user->password = bycrypt($request['new_pasword']);
-            $user->save();
-            return redirect()->back()->with('success',  "Password Chnage Successfully");
-
         }
         return back();
         

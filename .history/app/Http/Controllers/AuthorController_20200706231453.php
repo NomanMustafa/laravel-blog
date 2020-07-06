@@ -9,7 +9,6 @@ use Carbon\Carbon;
 use App\Http\Requests\CreatePost;
 use Illuminate\Support\Facades\Auth;
 
-
 class AuthorController extends Controller
 {
 

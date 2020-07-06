@@ -25,17 +25,17 @@
         		<div class="r3_counter_box">
                     <i class="pull-left fa fa-comment user2 icon-rounded"></i>
                     <div class="stats">
-                      <h5><strong>{{ $todaycomment }}</strong></h5>
-                      <span>Coments Today</span>
+                      <h5><strong>1012</strong></h5>
+                      <span>New Users</span>
                     </div>
                 </div>
         	</div>
         	<div class="col-md-3 widget">
         		<div class="r3_counter_box">
-                    <i class="pull-left fa fa-comment user2 icon-rounded"></i>
+                    <i class="pull-left fa fa-dollar dollar1 icon-rounded"></i>
                     <div class="stats">
-                      <h5><strong>{{ $allcomments->count() }}</strong></h5>
-                      <span>Comments All Time</span>
+                      <h5><strong>$450</strong></h5>
+                      <span>Profit Today</span>
                     </div>
                 </div>
         	 </div>

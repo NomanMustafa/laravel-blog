@@ -41,7 +41,7 @@ class UserController extends Controller
             ]);
             $user->password = bycrypt($request['new_pasword']);
             $user->save();
-            return redirect()->back()->with('success',  "Password Chnage Successfully");
+            retrun redirect()->back()->with('success',  'Password Chnage Successfully');
 
         }
         return back();

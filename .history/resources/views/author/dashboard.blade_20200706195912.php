@@ -25,7 +25,7 @@
         		<div class="r3_counter_box">
                     <i class="pull-left fa fa-comment user2 icon-rounded"></i>
                     <div class="stats">
-                      <h5><strong>{{ $todaycomment }}</strong></h5>
+                      <h5><strong>{{ $allcomments->where('created_at','>=', Carbon\Carbon::today())->count() }}</strong></h5>
                       <span>Coments Today</span>
                     </div>
                 </div>
@@ -34,7 +34,7 @@
         		<div class="r3_counter_box">
                     <i class="pull-left fa fa-comment user2 icon-rounded"></i>
                     <div class="stats">
-                      <h5><strong>{{ $allcomments->count() }}</strong></h5>
+                      <h5><strong>{{ $allcomments }}</strong></h5>
                       <span>Comments All Time</span>
                     </div>
                 </div>

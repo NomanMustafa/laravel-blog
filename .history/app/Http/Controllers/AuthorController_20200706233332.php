@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use session;
 use App\Post;
 use App\Comment;
 use Carbon\Carbon;
 use App\Http\Requests\CreatePost;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Support\Facades\Session;
 
 class AuthorController extends Controller
 {

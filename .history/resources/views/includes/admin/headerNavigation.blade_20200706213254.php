@@ -16,7 +16,7 @@
      <li class="dropdown">
          <a href="#" class="dropdown-toggle avatar" data-toggle="dropdown"><img src="{{ asset('admin/assets/images/1.png') }}"></a>
          <ul class="dropdown-menu">
-            <li class="m_2"><a href="{{ route('userProfile') }}"><i class="fa fa-profile"></i> Profile</a></li>
+           
              <form id="logout-form" method="post" action="{{ route('logout') }}"> @csrf </form>
              <li class="m_2"><a href="#" onclick="document.getElementById('logout-form').submit();"><i class="fa fa-lock"></i> Logout</a></li>
          </ul>
