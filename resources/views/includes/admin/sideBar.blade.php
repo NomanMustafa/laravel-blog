@@ -10,7 +10,7 @@
 
                 <!-- /.nav-second-level -->
             </li>
-            @if(Auth::user()->author==true)
+            @if(Auth::user()->auther==true)
             <li> <a>Author</a> </li>
             <li>
                 <a href="{{ route('authorDashboard') }}"><i class="fa fa-dashboard fa-fw nav_icon {{ Route::currentRouteName()== 'authorDashboard' ? 'active': ''}}"></i>Dashboard</a>
@@ -22,6 +22,11 @@
             </li>
             <li>
                 <a href="{{ route('authorComments') }}"><i class="fa fa-laptop nav_icon {{ Route::currentRouteName()== 'authorComments' ? 'active': ''}}"></i>Comments</a>
+
+                <!-- /.nav-second-level -->
+            </li>
+             <li>
+                <a href="{{ route('adminProducts') }}"><i class="fa fa-laptop nav_icon {{ Route::currentRouteName()== 'adminProducts' ? 'active': ''}}"></i>Products</a>
 
                 <!-- /.nav-second-level -->
             </li>

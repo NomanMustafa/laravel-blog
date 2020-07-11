@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Comment;
-use Illuminate\Http\Request;
 use App\Http\Requests\UpdateUser;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -25,14 +24,12 @@ class UserController extends Controller
     }
     public function profilePost(UpdateUser $request)
     {
-        $user= Auth::user();
+        $user = Auth::user();
         $user->name = $request['name'];
         $user->email = $request['email'];
         $user->save();
-        if($request['password'] != "")
-        {
-            if(!(Hash::check($request['password'], Auth::user()->password)))
-            {
+        if ($request['password'] != "") {
+            if (!(Hash::check($request['password'], Auth::user()->password))) {
                 return redirect()->back()->with('error', 'Your currrent password are not with you provided');
             }
             $validation = $request->validate([
@@ -41,17 +38,17 @@ class UserController extends Controller
             ]);
             $user->password = bycrypt($request['new_pasword']);
             $user->save();
-            return redirect()->back()->with('success',  "Password Chnage Successfully");
+            return redirect()->back()->with('success', "Password Chnage Successfully");
 
         }
         return back();
-        
+
         dd($request->all());
     }
-    public function deleteComment()
+    public function deleteComment($id)
     {
         $comment = Comment::where('id', $id)->where('user_id', Auth::id())->delete();
-        
+
         return back();
     }
 

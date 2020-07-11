@@ -38,6 +38,9 @@ Route::prefix('author')->group(function () {
     Route::get('posts', 'AuthorController@posts')->name('authorPosts');
     Route::get('posts/new', 'AuthorController@newPosts')->name('newPosts');
     Route::post('posts/new', 'AuthorController@createPost')->name('createPost');
+    Route::get('post/{id}/edit', 'AuthorController@postEdit')->name('postEdit');
+    Route::post('post/{id}/edit', 'AuthorController@postEditPost')->name('postEditPost');
+    Route::post('post/{id}/delete', 'AuthorController@deletePost')->name('deletePost');
     Route::get('comments', 'AuthorController@comments')->name('authorComments');
 });
 
@@ -46,4 +49,18 @@ Route::prefix('admin')->group(function () {
     Route::get('/posts', 'AdminController@posts')->name('adminPosts');
     Route::get('/comments', 'AdminController@comments')->name('adminComments');
     Route::get('/users', 'AdminController@users')->name('adminUsers');
+    Route::get('post/{id}/edit', 'AdminController@postEdit')->name('adminPostEdit');
+    Route::post('post/{id}/edit', 'AdminController@postEditPost')->name('adminPostEditPost');
+    Route::post('post/{id}/delete', 'AdminController@deletePost')->name('adminDeletePost');
+    Route::post('comment/{id}/delete', 'AdminController@deletComment')->name('adminDeletComment');
+
+    Route::get('/products', 'AdminController@products')->name('adminProducts');
+    Route::get('/products/new', 'AdminController@newProduct')->name('adminNewProduct');
+    Route::post('/products/new', 'AdminController@newProductPost')->name('adminNewProduct');
+    Route::get('/products/{id}', 'AdminController@editProduct')->name('adminEditProduct');
+    Route::post('/products/{id}', 'AdminController@editProductPost')->name('adminEditProduct');
+});
+Route::prefix('shop')->group(function () {
+Route::get('/' , 'ShopController@index')->name('shop.index');
+
 });
