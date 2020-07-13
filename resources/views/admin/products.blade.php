@@ -29,7 +29,7 @@
           
           <td>
           <a href="{{ route('adminEditProduct',  $product->id) }}" class="btn-warning">Edit</a>
-          <form id="deletePost-{{ $product->id }}" action="{{ route('adminDeletePost', $product->id) }}" method="POST">@csrf</form><br>
+          <form id="deletePost-{{ $product->id }}" action="{{ route('deleteProduct', $product->id) }}" method="POST">@csrf</form><br>
           <a href="#" onclick="document.getElementById('deletePost-{{ $product->id }}').submit();" class="btn-warning">Delete</a> 
           </td>
         </tr>

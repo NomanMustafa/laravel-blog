@@ -128,6 +128,11 @@ public function editProductPost(Request $request ,$id)
     return back();
 
 }
+public function deleteProduct($id)
+{
+    $product = Product::findOrFail($id)->delete();
+    return back();
+}
 
 
 }
